@@ -1,0 +1,84 @@
+
+{% load static %}
+{% load bootstrap4 %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="generator" content="Hugo 0.84.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/signupForm.css' %}" />
+        <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/bootstrap.jquery.bundle.min.js' %}" ></script>
+        
+        
+        {% bootstrap_css %}
+    </head>
+    <body>
+
+        <div class="container-fluid bg-container">
+            <div class="row " >
+                
+                <div class="col-12 mt-5 w-100 d-flex flex-row justify-content-center">
+                    <div class="signup-container p-2">
+                        {% block content %}
+                        <form  id="addContactForm" class="p-2 "> {% csrf_token %}
+                            <div class="mb-3">
+                                <h1 class="main-heading main-heading-add-contact">Add New Contact</h1>
+
+                            </div>
+                            <div class="mb-2 mt-1">
+                                <label class="label-element" for="contact_name">Name</label>
+                                <input type="text" class="form-input" required id="contact_name" name="contact_name" placeholder="Enter Contact name here" />
+                            </div>
+                            <div class="mb-2">
+                                <label class="label-element" for="phone_number">Number</label>
+                                <input type="text" class="form-input" required id="phone_number" name="phone_number" placeholder="Enter Contact Phone Number here" />
+                            </div>
+                            <div class="mb-2">
+                                <label class="label-element" for="email">Email</label>
+                                <input type="email" class="form-input" id="email" name="email"  placeholder="Enter email here" />
+                            </div>
+                            <div >
+                            <div class="mb-2  ">
+                                <label class="label-element spam-label" for="spam">Spam</label>
+                                <input type="checkbox" class="spam-box" id="spam" name="spam" value="true"   />
+                                <input type="hidden" class="spam-box" checked id="spam" name="spam" value="false"   />
+                                
+                            </div>
+                            <div>
+                                <label class="label-element" id="msgElement"></label>
+
+                            </div>
+                            <div class="mb-2 d-flex flex-row justify-content-center">
+                                <input type="submit"  class="btn btn-primary" value="Add Contact">
+                                
+                            </div>
+
+
+                        </form>
+                        {% endblock %}
+
+                        
+                       
+                    </div>
+
+
+                </div>
+                
+                
+             
+            </div>
+
+        </div>
+        
+        <script type="text/javascript" src="{% static 'js/createContact.js' %}"></script>
+        
+        {% bootstrap_javascript %}
+    </body>
+</html>

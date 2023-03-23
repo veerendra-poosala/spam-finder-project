@@ -1,0 +1,176 @@
+
+{% load static %}
+{% load bootstrap4 %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="generator" content="Hugo 0.84.0">
+        
+        <link rel="stylesheet" type="text/css" href="{% static 'css/signupForm.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
+        
+        
+        
+        {% bootstrap_css %}
+    </head>
+    <body>
+
+        <div class="container-fluid base-bg-container">
+            <div class="row row-container" >
+                <div class="col-12  col-md-2 d-none d-md-block">
+
+                </div>
+                <div class="col-12 col-md-8 col-container d-flex flex-row justify-content-center w-100 mt-4  mb-2 ">
+                    
+                        <div class="text-center " >
+                            {% block content %}
+                            <h3 class="text-center " style="font-size: 22px; padding-top: 5px;" id="login-user-name">User Name : {{name}} </h3>
+                            
+                        
+                        </div>
+                        <div class="d-flex flex-row  buttons-to-end">
+                            <div class="mr-2">
+                                <a href="{% url 'register' %}" >
+                                    <button class="btn btn-primary" >Register</button>
+                                </a>
+                            </div>
+                            <div class="mr-2">
+                                <a href="{% url 'navToLogin' %}" >
+                                    <button class="btn btn-primary" >Login</button>
+                                </a>
+                            </div>
+                            <div class="mr-2">
+                                <a href="{% url 'logout' %}" >
+                                    <button class="btn btn-primary" >logout</button>
+                                </a>
+                            </div>
+                        </div>
+                    
+
+                </div>
+
+                <div class="col-12 col-md-2 d-none  d-md-block">
+
+                </div>
+
+                <div class="col-12 col-md-2 d-none d-md-block">
+
+                </div>
+                
+                
+                <div class="col-12 col-md-8 col-container mt-2 mb-2">
+                    <div class="buttons-container w-100">
+                        <h1 style="font-size: 24px;">Contacts</h1>
+                    </div>
+                    <div class="p-2 d-flex flex-row justify-content-center">
+                        <input type="search" autofocus id="search_input_value" class="w-100 text-center search-element" />
+                        <button id="search_button"  class="button btn btn-primary">Search Number</button>
+                        <div>
+                            <a href="{% url 'navToCreateContact' %}" >
+                                <button class="btn btn-success mr-2" >Add Contact</button>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="{% url 'navToEditContactForm' %}">
+                                <button class="btn btn-danger ml-2"  id="editBtn">Edit Contact</button>
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-2 d-none d-md-block">
+
+                </div>
+                <div class="col-12 col-md-2 d-none d-md-block">
+
+                </div>
+                <div class="col-12 col-md-8 col-container">
+                    <div class=" mb-2">
+                        
+                        <div class="mt-1 mb-2">
+                            <ul id="contacts-list"></ul>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-12 col-md-2 d-none d-md-block">
+
+                </div>
+
+                
+             
+            </div>
+            <div class="row row-container fixed-bottom" id="secondRow">
+                <div class="col-12 col-md-2 d-none  d-md-block">
+
+                </div>
+                <div id="editContainer" class="col-12 col-md-8 d-none col-container mb-0" >
+                    
+                     <div class="d-flex flex-row justify-content-center "> 
+                        <form   id="editContactForm" name="editContactForm" method="post"   class=" "> {% csrf_token %}
+                            <div class="edit-form-container">
+                                <legend class="main-heading-edit ">Edit Contact</legend>
+                                <hr style="color: gray; width: auto; ">
+                            
+                                <label class="label-element mt-0 mb-0" for="contact_name">Name</label>
+                                <input type="text" class="form-input" style="margin-right: 5px;"  id="contact_name" name="contact_name"  />
+                                
+                                <label class="label-element mt-0 mb-0" for="phone_number">Number</label>
+                                <input type="text" class="form-input" style="margin-right: 5px;" id="phone_number" name="phone_number"  />
+                                
+                               <br/>
+                               <hr style="color: gray; width: auto; ">
+                                <label class="label-element  mt-0 mb-0" for="email">Email</label>
+                                <input type="email" style="margin-right: 5px;" class="form-input" id="email" name="email"   />
+                            
+                                <label class="label-element mt-0 mb-0 spam-label" for="spam">Is Spam Number?</label>
+                                <input type="checkbox" class="spam-box" id="spam" name="spam"    />
+                                
+                                <p class="mt-0 mb-0" id="modelId" hidden ></p>
+                                <br/>
+                                <hr style="color: gray; width: auto; ">
+
+                                <div class="text-center mr-auto">
+                                    
+                                    <input type="submit" class="btn btn-primary" id="submitBtn" name="Save"/>
+                                    <button id="cancelBtn" class="btn btn-danger">Cancel</button>
+                                </div>
+
+                            
+                                
+                                
+                            </div>
+
+
+                        </form>
+                    </div>  
+                        {% endblock %}
+
+                    
+
+                </div>
+                <div class="col-12 col-md-2 d-none d-md-block">
+
+                </div>
+
+            </div>
+
+        </div>
+        
+        <script type="text/javascript" src="{% static 'js/getContactsDetails.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/bootstrap.jquery.bundle.min.js' %}" ></script>
+        
+        
+        {% bootstrap_javascript %}
+    </body>
+</html>
+

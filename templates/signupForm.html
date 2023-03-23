@@ -1,0 +1,101 @@
+
+{% load static %}
+{% load bootstrap4 %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="generator" content="Hugo 0.84.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/signupForm.css' %}" />
+
+        <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/bootstrap.jquery.bundle.min.js' %}" ></script>
+        
+
+        {% bootstrap_css %}
+    </head>
+    <body>
+
+        <div class="container-fluid bg-container">
+            <div class="row " >
+                
+                <div class="col-12 mt-5 w-100 d-flex flex-row justify-content-center">
+                    <div  class="signup-container ">
+                        {% block content %}
+                        <div class=" p-2" >
+                            <div>
+                                <h1 class="text-center main-heading p-2">SignUp/Sign Here</h1>
+                            </div>
+                            <div class= "mt-4 mb-2 d-flex flex-row justify-content-center">
+                                
+                                {% for message in messages %}
+                                <span style="align-items: center; color:red; font-weight: bold;">{{message}}</span>
+                                {% endfor %}
+                            </div>
+
+                            <div class="d-flex flex-row justify-content-center">
+                                
+
+                                <form id="myForm" class="" action="{% url 'signup' %}" method="post">{% csrf_token %}
+
+                                    
+                                    <div class="mb-3">
+                                        <label class="label-element"  for="username">User Name</label>
+                                        <input type="text" required class="input-element" name="username" placeholder="Enter username here" />
+                                        <p id="nameErrMsg" class="error-message"></p>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="label-element" for="phone_number">Phone Number</label>
+                                        <input type="text" required name="phone_number" class="input-element" placeholder="Enter phone number here" />
+                                        <p id="password1ErrMsg" class="error-message"></p>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="label-element" for="password1">Password</label>
+                                        <input type="password" required name="password1" class="input-element" placeholder="Enter password here" />
+                                        <p id="password1ErrMsg" class="error-message"></p>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="label-element" for="password2">Re-Enter Password</label>
+                                        <input type="password" name="password2" class="input-element" />
+                                        <p id="password2ErrMsg" class="error-message"></p>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="label-element" for="email">Email</label>
+                                        <input type="text" name="email" class="input-element" />
+                                        <p id="emailErrMsg" class="error-message"></p>
+                                    </div>
+                                    
+                                    <div class="text-center">
+                                        <button id="submitBtn" class="btn btn-primary">Submit</button>
+                                    </div>
+                                    <div class="container signin mt-2">
+                                        <p class="text-center">Already have an account? <a href="{% url 'login' %}"><span style="color: red;">sign in</span></a>.</p>
+                                    </div>
+
+
+                                </form>
+
+                                
+                            </div>
+                            
+                        </div>
+                        {% endblock %}
+                    </div>
+                
+                </div>
+              
+            </div>
+
+        </div>
+        <!--
+        <script type="text/javascript" src="{% static 'js/registrationForm.js' %}"></script>
+        -->
+        {% bootstrap_javascript %}
+    </body>
+</html>

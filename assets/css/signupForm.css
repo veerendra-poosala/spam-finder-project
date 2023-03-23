@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.form-heading {
+  font-family: "Roboto";
+  font-size: 36px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.error-message {
+  color: #dc3545;
+  font-family: "Roboto";
+  font-size: 14px;
+}
+
+.gender-field-heading {
+  color: #212529;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.signup-container{
+    border-radius: 12px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #7aafe4;
+    background-image: linear-gradient(to right,#ab09e2,#8507f5);    
+    background-size: cover;
+    color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+
+}
+
+.main-heading{
+    margin-top: 5 px;
+    font-size: 18px;
+
+}
+
+.label-element{
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.bg-container{
+  background-image: linear-gradient(to right,#921c88,#bf13e6);
+  background-size: cover;
+  height: 100vh;
+}
+
+.main-heading-add-contact{
+ 
+  margin-bottom: 5px;
+}
+
+.form-input{
+
+  padding: 2px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 70px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #333;
+
+
+
+}
+
+.spam-box{
+  width: 20px;
+  height: 20px;
+  margin-top: 12px;
+  margin-right: 12px;
+  
+}
+
+.spam-label{
+  
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    
+    padding-right: 20px;
+    border-radius: 5px;
+    
+}
+
+::placeholder { 
+  font-size: 14px;
+  text-align: center;
+  
+}
+
+.success-message{
+  color: #0cea0c;
+}
+
+.failure-message{
+  color: red;
+}

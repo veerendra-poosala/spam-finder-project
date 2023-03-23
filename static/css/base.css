@@ -1,0 +1,129 @@
+
+
+.base-bg-container{
+    
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+.col-container{
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-bottom: 6px;
+    padding-top: 18px;
+    border-radius: 14px;
+    border-width: 1px;
+    border-style:solid;
+    border-color: darkgray;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+    background-size: cover;
+    margin-bottom: 5px;
+}
+
+.contact-container{
+    border-radius: 14px;
+    border-width: 1px;
+    border-style:solid;
+    border-color: darkgray;
+    padding: 2px;
+    font-family: 'Times New Roman', Times, serif;
+    list-style-type: none;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-around;
+    
+
+}
+
+.label-element{
+    font-size: 14px;
+    padding-top: 15px;
+    
+}
+
+.verified-element{
+    color: green;
+}
+.spam-element{
+    color: red;
+}
+
+.search-element{
+    border-radius: 6px;
+    border-width: 2px;
+    border-style:solid;
+    border-color: darkgray;
+    padding: 2px;
+    font-family: 'Times New Roman', Times, serif;
+    list-style-type: none;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.buttons-container{
+    border-radius: 3px;
+    border-width: 2px;
+    border-style:solid;
+    border-color: darkgray;
+    padding: 2px;
+    font-family: 'Times New Roman', Times, serif;
+    list-style-type: none;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content:center;
+    padding: 5px;
+}
+
+.button{
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 100px;
+}
+
+.buttons-to-end{
+    margin-left: auto;
+    display: flex;
+    justify-content:right;
+}
+
+#login-user-name{
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.edit-button{
+    margin-top: 18px;
+    margin-bottom: 4px;
+    font-size: 10px;
+    padding-bottom: 20px;
+    height: 30px;
+    width: 70px;
+}
+
+#editContainer{
+    
+    border-radius: 14px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-width: 1px;
+    border-style:solid;
+    border-color: darkgray;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+    
+    margin-bottom: 5px;
+    background-color: aquamarine;
+    margin-bottom: 0px;
+    font-family: 'Times New Roman', Times, serif;
+    
+    
+}
+.main-heading-edit{
+    font-size: 14px;
+    
+}
+
+.form-input{
+    width: 140px;
+}
