@@ -83,7 +83,7 @@ DATABASES = {
     'ENGINE': 'django.db.backends.mysql',
     'NAME': 'spamFinderProject',
     'USER': 'root',
-    'PASSWORD': 'Pv@10297',
+    'PASSWORD': '',
     'HOST': 'localhost',
     'PORT': '3306',
     }
